@@ -3,9 +3,9 @@ AADx APIs (.net Standard)
 This project is part of the Azure AD authentication model and provides two APIs, each
 in a separate project.  Each API is constucted using asp.net Standard 4.61
 
-## Version A
+## Step A
  - No authentication is implemeted
- - CORS is enabled
+ - CORS is enabled for all origins
 
 ## Steps for Basic Behavior and CORS
 
