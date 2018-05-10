@@ -13,11 +13,13 @@ using AADx.EventsApi.DAL;
 
 namespace AADx.EventsApi.Controllers
 {
+    [Authorize]
     public class EventController : ApiController
     {
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private EventContext db = new EventContext();
         
+        [AllowAnonymous]
         // GET: api/Event
         public IQueryable<EventItem> GetEventItems()
         {

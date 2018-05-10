@@ -10,6 +10,7 @@ using AADx.TodoApi.DAL;
 
 namespace AADx.TodoApi.Controllers
 {
+    [Authorize]
     public class TodoController : ApiController
     {
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
