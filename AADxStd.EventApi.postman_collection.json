@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "5b2e7b9f-9b61-4d31-aa7d-4fe3b4b8a978",
+		"name": "AADxStd.EventApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Events",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{event-domain}}api/event",
+					"host": [
+						"{{event-domain}}api"
+					],
+					"path": [
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Event by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{event-domain}}api/event/1",
+					"host": [
+						"{{event-domain}}api"
+					],
+					"path": [
+						"event",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"description\": \"Blah blah blah blah\",\n        \"owner\": \"Barney Rubble\",\n        \"team\": \"WaterBuffaloes\",\n        \"faction\": \"Horde\"\n    }"
+				},
+				"url": {
+					"raw": "{{event-domain}}api/event",
+					"host": [
+						"{{event-domain}}api"
+					],
+					"path": [
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n    \t\"id\": 1,\n        \"description\": \"LALALALALA\",\n        \"owner\": \"Fred Flinstone\",\n        \"team\": \"WaterBuffaloes\",\n        \"faction\": \"Horde\"\n    }"
+				},
+				"url": {
+					"raw": "{{event-domain}}api/event/1",
+					"host": [
+						"{{event-domain}}api"
+					],
+					"path": [
+						"event",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Event",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{event-domain}}api/event/2",
+					"host": [
+						"{{event-domain}}api"
+					],
+					"path": [
+						"event",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0645b6dc-4525-4453-b601-c3d2a9ac20ae",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2e1f2a89-9107-46be-b752-9d88b75460a3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

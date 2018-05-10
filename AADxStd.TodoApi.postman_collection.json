@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "345f073c-8ac8-400c-a4b8-b466ed6035de",
+		"name": "AADxStd.TodoApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{todo-domain}}api/todo",
+					"host": [
+						"{{todo-domain}}api"
+					],
+					"path": [
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{todo-domain}}api/user",
+					"host": [
+						"{{todo-domain}}api"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Todo by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{todo-domain}}api/todo/1",
+					"host": [
+						"{{todo-domain}}api"
+					],
+					"path": [
+						"todo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"description\": \"Blah blah blah blah\",\n        \"owner\": \"Barney Rubble\",\n        \"team\": \"WaterBuffaloes\",\n        \"faction\": \"Horde\"\n    }"
+				},
+				"url": {
+					"raw": "{{todo-domain}}api/todo",
+					"host": [
+						"{{todo-domain}}api"
+					],
+					"path": [
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n    \t\"id\": 1,\n        \"description\": \"LALALALALA\"\n    }"
+				},
+				"url": {
+					"raw": "{{todo-domain}}api/todo/1",
+					"host": [
+						"{{todo-domain}}api"
+					],
+					"path": [
+						"todo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{todo-domain}}api/todo/2",
+					"host": [
+						"{{todo-domain}}api"
+					],
+					"path": [
+						"todo",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "da5e22a8-b539-469c-bac0-4b0fe18ab36d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "88dcacd5-c75e-40d3-a4e0-43561af8445a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

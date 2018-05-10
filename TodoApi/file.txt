@@ -1,0 +1,1 @@
+2018-04-28 08:00:14.7629|DEBUG|AADx.TodoApi.Controllers.TodoController|Created item with id 2
