@@ -17,6 +17,7 @@ namespace AADx.TodoApi.Controllers
         private TodoContext db = new TodoContext();
 
         // GET: api/Todo
+        [Authorize(Roles = "ToDoObserver,ToDoWriter,ToDoApprover,ToDoAdmin,GlobalAdmin")]
         public IQueryable<TodoItem> GetTodoItems()
         {
             logger.Debug("returning all ...");
@@ -24,6 +25,7 @@ namespace AADx.TodoApi.Controllers
         }
 
         // GET: api/Todo/5
+        [Authorize(Roles = "ToDoObserver,ToDoWriter,ToDoApprover,ToDoAdmin,GlobalAdmin")]
         [ResponseType(typeof(TodoItem))]
         public IHttpActionResult GetTodoItem(long id)
         {
@@ -38,6 +40,7 @@ namespace AADx.TodoApi.Controllers
         }
 
         // PUT: api/Todo/5
+        [Authorize(Roles = "ToDoApprover,ToDoAdmin,GlobalAdmin")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutTodoItem(long id, TodoItem item)
         {
@@ -74,6 +77,7 @@ namespace AADx.TodoApi.Controllers
         }
 
         // POST: api/Todo
+        [Authorize(Roles = "ToDoWriter,ToDoAdmin,GlobalAdmin")]
         [ResponseType(typeof(TodoItem))]
         public IHttpActionResult PostTodoItem(TodoItem item)
         {
@@ -91,6 +95,7 @@ namespace AADx.TodoApi.Controllers
         }
 
         // DELETE: api/Todo/5
+        [Authorize(Roles = "ToDoAdmin,GlobalAdmin")]
         [ResponseType(typeof(TodoItem))]
         public IHttpActionResult DeleteTodoItem(long id)
         {

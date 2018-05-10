@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using AADx.Common.Models;
@@ -13,14 +8,13 @@ using AADx.EventsApi.DAL;
 
 namespace AADx.EventsApi.Controllers
 {
-    [Authorize]
     public class EventController : ApiController
     {
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private EventContext db = new EventContext();
-        
-        [AllowAnonymous]
+
         // GET: api/Event
+        [Authorize(Roles = "EventObserver,EventWriter,EventApprover,EventAdmin,GlobalAdmin")]
         public IQueryable<EventItem> GetEventItems()
         {
             logger.Debug("returning all ...");
@@ -28,6 +22,7 @@ namespace AADx.EventsApi.Controllers
         }
 
         // GET: api/Event/5
+        [Authorize(Roles = "EventObserver,EventWriter,EventApprover,EventAdmin,GlobalAdmin")]
         [ResponseType(typeof(EventItem))]
         public IHttpActionResult GetEventItem(long id)
         {
@@ -42,6 +37,7 @@ namespace AADx.EventsApi.Controllers
         }
 
         // PUT: api/Event/5
+        [Authorize(Roles = "EventApprover,EventAdmin,GlobalAdmin")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutEventItem(long id, EventItem eventItem)
         {
@@ -79,6 +75,7 @@ namespace AADx.EventsApi.Controllers
         }
 
         // POST: api/Event
+        [Authorize(Roles = "EventWriter,EventAdmin,GlobalAdmin")]
         [ResponseType(typeof(EventItem))]
         public IHttpActionResult PostEventItem(EventItem eventItem)
         {
@@ -95,6 +92,7 @@ namespace AADx.EventsApi.Controllers
         }
 
         // DELETE: api/Event/5
+        [Authorize(Roles = "EventAdmin,GlobalAdmin")]
         [ResponseType(typeof(EventItem))]
         public IHttpActionResult DeleteEventItem(long id)
         {

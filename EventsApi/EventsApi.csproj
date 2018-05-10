@@ -148,6 +148,7 @@
   <ItemGroup>
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EventAnonController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="DAL\EventContext.cs" />
     <Compile Include="DAL\EventContextInitializer.cs" />
