@@ -22,3 +22,49 @@ This repo has multiple branches, each of which represent different chapters as a
    - you will need to create a application in AAD for each API project
    - A simple role hierarchy is used and different roles must be registered with each API appliation
  - Step_D: Groups (not implemented)
+
+# Solution Structure
+
+This solusion contains 2 Web API projects, each providing simple CRUD behavior.  Both projects use the Owin middleware
+to enable CORS, (see the App_Start/Starup.cs class in each API project).  Additionally, certain json serialization settings
+are applied in each api (see the App_Start/WebApiConfig.cs class in each API project).
+
+## Common
+A simple class project for models and common classes
+
+## TodoApi  
+Provides CRUD endpoints for TodoItem objects:
+
+    public class TodoItem
+    {
+        public long Id { get; set; }
+        public string Description { get; set; }
+        public string Owner { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public TeamType Team { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public FactionType Faction { get; set; }
+    }
+    
+The Todo Api also provides a User controller to return user objects which is intended for later chapters where authorization
+must be done in conjunction with local profile data.
+    
+## EventsApi  
+Provides CRUD endpoints for EventItem objects:
+
+    public class EventItem
+    {
+        public long Id { get; set; }
+        public string Description { get; set; }
+        public string Owner { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public TeamType Team { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public FactionType Faction { get; set; }
+    }
+    
+ 
