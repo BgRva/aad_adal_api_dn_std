@@ -67,4 +67,18 @@ Provides CRUD endpoints for EventItem objects:
         public FactionType Faction { get; set; }
     }
     
- 
+## Setup
+After cloning or copying, make sure to update the solution to have 2 startup projects:
+
+1) On the menu:  Debub -> Set Starup Projects
+2) Choose 'Multiple Starup Projects'
+3) Set EventsApi, TodoApi to 'Start'
+4) Choose set startup projec
+5) Click 'Apply'
+
+Turn off web startup for each project
+By default the API projects will spawn a web page, to turn this off do the following:
+1) Right click on TodoApi or EventsApi
+2) Choose properties
+3) Click the 'Web' tab
+4) Select "Don't open a page."
