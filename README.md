@@ -9,6 +9,22 @@ project in another repo [BgRva/aad_adal_ui_ng_js](https://github.com/BgRva/aad_a
 
 This repo has multiple branches, each of which represent different chapters as authentication and authorization are implemented.  Each step builds upon the previous step.  The README file is different for each step and describes the changes with respect to the previous step.  To proceed through all the steps you will need an Azure subscription.  All samples use the default Azure AD features (i.e. free tier).
 
+## Setup
+After cloning or copying, make sure to update the solution to have 2 startup projects:
+
+1) On the menu:  Debub -> Set Starup Projects
+2) Choose 'Multiple Starup Projects'
+3) Set EventsApi, TodoApi to 'Start'
+4) Choose set startup projec
+5) Click 'Apply'
+
+Turn off web startup for each project
+By default the API projects will spawn a web page, to turn this off do the following:
+1) Right click on TodoApi or EventsApi
+2) Choose properties
+3) Click the 'Web' tab
+4) Select "Don't open a page."
+
 # Step B
 Baseline integration with Azure AD, authorization is enforced
 Next step is **Step_C**
